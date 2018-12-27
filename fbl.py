@@ -38,12 +38,13 @@ def bot_like():
 	
 	for i in range(LIKES_TIMES):
 		driver.get("http://freelikes.online/earn/youtube/ytlike")
-		print(" "+str(i+1)+": "+get_element("font#points2").text)
+		#print(" "+str(i+1)+": "+get_element("font#points2").text)
 		task_element = get_element(".col-sm-12") 
 		if task_element is None:
 			print("  Нет заданий") #debug
 			return True
 		task = task_element.get_attribute("id")
+		print(task)
 		if task == last_task:
 			repeat += 1
 			print("  Повтор задания: "+str(repeat)) #debug
@@ -119,7 +120,8 @@ def check_blacklist(url):
 	blacklist = [
 		"https://www.youtube.com/watch?v=xrVUQ-KKra8",
 		"https://www.youtube.com/watch?v=1Mlb7BjYnaI",
-		"https://www.youtube.com/watch?v=EK4CVx-1SmY"
+		"https://www.youtube.com/watch?v=EK4CVx-1SmY",
+		"https://www.youtube.com/watch?v=BpT0s7sg_VU"
 	]
 	return url in blacklist
 	
@@ -137,10 +139,11 @@ def main():
 	bot()
 
 options = webdriver.ChromeOptions()
-if HEADLESS_MODE: options.add_argument('headless')
-if MUTE_AUDIO: options.add_argument("mute-audio") 
-options.add_argument("log-level=3") 
-driver = webdriver.Chrome(chrome_options=options)
+if HEADLESS_MODE: options.add_argument('--headless')
+if MUTE_AUDIO: options.add_argument("--mute-audio") 
+#options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--log-level=3") 
+driver = webdriver.Chrome("./chromedriver",chrome_options=options)
 main()
 
 	
