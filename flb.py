@@ -38,7 +38,7 @@ def bot_like():
 	
 	for i in range(LIKES_TIMES):
 		driver.get("http://freelikes.online/earn/youtube/ytlike")
-		#print(" "+str(i+1)+": "+get_element("font#points2").text)
+		print(" "+str(i+1)+": "+get_element("font#points2").text)
 		task_element = get_element(".col-sm-12") 
 		if task_element is None:
 			print("  Нет заданий") #debug
