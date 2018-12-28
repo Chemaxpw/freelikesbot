@@ -5,12 +5,12 @@ from time import sleep
 def get_element(selector):
 	for i in range(4):
 		sleep(2)
-		try:
-			element = driver.find_element_by_css_selector(selector)
-		except:
-			pass
-		else:
-			return element
+	try:
+		element = driver.find_element_by_css_selector(selector)
+	except:
+		pass
+	else:
+		return element
 return None
 
 options = webdriver.ChromeOptions()
