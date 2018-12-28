@@ -11,7 +11,7 @@ def get_element(selector):
 		pass
 	else:
 		return element
-return None
+	return None
 
 options = webdriver.ChromeOptions()
 options.add_argument('headless')
