@@ -25,7 +25,7 @@ get_element(".whsOnd.zHQkBf").send_keys("rvtrbtrb564565")
 get_element(".CwaK9").click()
 sleep(3)
 driver.get("http://freelikes.online/earn/youtube/ytlike")
-print(driver.title)
+print(driver.current_url)
 try:
 	balance = get_element("font#points2").text
 except:
