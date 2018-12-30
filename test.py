@@ -24,10 +24,11 @@ get_element(".CwaK9").click()
 get_element(".whsOnd.zHQkBf").send_keys("dhfd7fhd7f8")
 get_element(".CwaK9").click()
 sleep(3)
-print(driver.current_url)
+get_element("#profileIdentifier").click()
+sleep()
 try:
-	get_element(".socico.ytico").click()
+	balance = get_element("font#points2").text
 except:
 	print("Not found")
 else:
-	print(driver.current_url)
+	print(balance)
