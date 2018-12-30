@@ -16,7 +16,7 @@ def get_element(selector):
 options = webdriver.ChromeOptions()
 options.add_argument('headless')
 options.add_argument("log-level=3") 
-driver = webdriver.Chrome(chrome_options=options)
+driver = webdriver.Chrome("./chromedriver",chrome_options=options)
 driver.get("http://freelikes.online/")
 get_element(".socico.ytico").click()
 get_element("#identifierId").send_keys("markata89")
