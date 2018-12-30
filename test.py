@@ -28,8 +28,8 @@ driver.get("http://freelikes.online/earn/youtube/ytlike")
 sleep(3)
 print(driver.current_url)
 try:
-	balance = get_element("font#points2").text
+	get_element(".socico.ytico").click()
 except:
 	print("Not found")
 else:
-	print(balance)
+	print(driver.current_url)
